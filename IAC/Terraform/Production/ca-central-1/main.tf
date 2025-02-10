@@ -29,7 +29,7 @@ provider "aws" {
 
 # VPC Module
 module "vpc" {
-  source               = "../../modules/vpc"
+  source               = "github.com/Team4techSolutions-Class6/modules//vpc"
   vpc_name             = "Test"
   cidr_block           = "10.0.0.0/16"
   public_subnet_cidr    = "10.0.0.0/24"
@@ -40,7 +40,7 @@ module "vpc" {
 
 # EC2 Module (Jenkins Instance)
 module "ec2_instance" {
-  source        = "../../modules/ec2"
+  source        = "github.com/Team4techSolutions-Class6/modules//ec2"
   ami_id        = "ami-0c9f6749650d5c0e3"
   instance_type = "t2.micro"
   instance_name = "Jenkins"
