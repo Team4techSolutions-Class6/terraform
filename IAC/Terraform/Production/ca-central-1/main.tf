@@ -48,7 +48,7 @@ module "ec2_instance" {
   key_name      = "handson"
 }
 
-# VPC Peering Module: ca-central-1 ↔ us-east-1
+/*# VPC Peering Module: ca-central-1 ↔ us-east-1
 module "ca_to_us_peering" {
   source                        = "../../modules/vpc-peering"
   requester_vpc_id              = "vpc-0b7b4741142c5be38"        # ca-central-1 VPC ID
@@ -96,4 +96,4 @@ module "ca_to_eu_peering" {
     aws.requester = aws.ca
     aws.accepter  = aws.eu
   }
-}
+}*/
