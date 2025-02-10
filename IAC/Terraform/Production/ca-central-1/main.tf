@@ -29,7 +29,7 @@ provider "aws" {
 
 # VPC Module
 module "vpc" {
-  source               = "../modules/vpc"
+  source               = "../../modules/vpc"
   vpc_name             = "Test"
   cidr_block           = "10.0.0.0/16"
   public_subnet_cidr    = "10.0.0.0/24"
@@ -40,7 +40,7 @@ module "vpc" {
 
 # EC2 Module (Jenkins Instance)
 module "ec2_instance" {
-  source        = "../modules/ec2"
+  source        = "../../modules/ec2"
   ami_id        = "ami-0c9f6749650d5c0e3"
   instance_type = "t2.micro"
   instance_name = "Jenkins"
@@ -50,7 +50,7 @@ module "ec2_instance" {
 
 # VPC Peering Module: ca-central-1 ↔ us-east-1
 module "ca_to_us_peering" {
-  source                        = "../modules/vpc-peering"
+  source                        = "../../modules/vpc-peering"
   requester_vpc_id              = "vpc-0b7b4741142c5be38"        # ca-central-1 VPC ID
   accepter_vpc_id               = "vpc-07daac7e527f66267"        # us-east-1 VPC ID
   accepter_region               = "us-east-1"
@@ -75,7 +75,7 @@ module "ca_to_us_peering" {
 
 # VPC Peering Module: ca-central-1 ↔ eu-west-2
 module "ca_to_eu_peering" {
-  source                        = "../modules/vpc-peering"
+  source                        = "../../modules/vpc-peering"
   requester_vpc_id              = "vpc-0b7b4741142c5be38"        # ca-central-1 VPC ID
   accepter_vpc_id               = "vpc-02896d1fab55eabb6"        # eu-west-2 VPC ID
   accepter_region               = "eu-west-2"
