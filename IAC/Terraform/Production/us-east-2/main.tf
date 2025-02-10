@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source               = "../modules/vpc"
+  source               = "../../modules/vpc"
   vpc_name             = "Test"
   cidr_block           = "172.24.0.0/16"
   public_subnet_cidr    = "172.24.0.0/24"
@@ -24,7 +24,7 @@ module "vpc" {
 }
 
 module "ec2_instance" {
-  source        = "../modules/ec2"
+  source        = "../../modules/ec2"
   ami_id        = "ami-0e86e20dae9224db8"
   instance_type = "t2.micro"
   instance_name = "Jenkins"
